@@ -7,10 +7,16 @@ RUN apk --update --upgrade --no-cache add bash cairo-dev make pango-dev gdk-pixb
 
 COPY package.json ./
 
+COPY bsconfig.json ./
+
+COPY src ./src
+
+COPY __tests__ ./__tests__
+
 RUN apk add --no-cache --virtual .build-deps gcc g++ python3-dev musl-dev jpeg-dev zlib-dev libffi-dev && \
   npm install && \
   apk del .build-deps
 
-COPY . .
+COPY bin ./bin
 
 CMD ["./bin/api"]

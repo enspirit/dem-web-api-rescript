@@ -2,7 +2,6 @@ services:
 
   api:
     image: dem-web-api-rescript/api
-    build: ./api
     command: npm run supervisor
     ports:
       - 3000:3000
