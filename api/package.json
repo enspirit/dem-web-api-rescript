@@ -1,0 +1,44 @@
+{
+  "name": "@enspirit/dem-web-api-rescript",
+  "version": "0.0.1",
+  "description": "Web API for doc-e-mate in ReScript",
+  "main": "src/api.bs.js",
+  "homepage": "https://github.com/enspirit/dem-web-api-rescript#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enspirit/dem-web-api-rescript.git"
+  },
+  "author": "ygu",
+  "license": "ISC",
+  "keywords": [
+    "rescript",
+    "markdown",
+    "mustache",
+    "doc-e-mate",
+    "api"
+  ],
+  "scripts": {
+    "prepare": "npm run re:build",
+    "re:build": "rescript build -with-deps",
+    "re:start": "rescript build -w",
+    "re:clean": "rescript clean",
+    "test": "jest",
+    "testw": "jest --watch"
+  },
+  "devDependencies": {
+    "rescript": "^10.0.1",
+    "supervisor": "^0.12.0",
+    "@glennsl/bs-jest": "^0.7.0",
+    "jest": "^29.1.2"
+  },
+  "jest": {
+    "testURL": "http://localhost/"
+  },
+  "dependencies": {
+    "@enspirit/dem-core-rescript": "^1.0.1",
+    "express": "^4.18.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
