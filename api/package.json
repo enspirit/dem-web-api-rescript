@@ -35,7 +35,7 @@
     "testURL": "http://localhost/"
   },
   "dependencies": {
-    "@enspirit/dem-core-rescript": "^1.0.1",
+    "@enspirit/dem-core-rescript": "^1.1.0",
     "express": "^4.18.2"
   },
   "publishConfig": {
