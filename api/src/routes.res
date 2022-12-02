@@ -1,10 +1,12 @@
-%%raw("
-const healthCheck = (req, res) => {
-  res.send('Hello World!')
-}
+let healthCheck = ()
 
-module.exports = healthCheck
-")
+// %%raw("
+// const healthCheck = (req, res) => {
+//   res.send('Hello World!')
+// }
+
+// module.exports = healthCheck
+// ")
 
 let postCompile = ()
 
