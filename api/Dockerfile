@@ -1,4 +1,4 @@
-FROM node:19-alpine
+FROM node:19-alpine AS builder
 
 WORKDIR /home/app
 
@@ -14,4 +14,10 @@ COPY ./ ./
 
 RUN npm run res:build
 
-CMD ["./bin/api"]
+FROM node:19-alpine
+
+RUN apk --update --upgrade --no-cache add bash
+
+COPY --from=builder /home/app/ ./
+
+CMD ["npm", "run", "start"]

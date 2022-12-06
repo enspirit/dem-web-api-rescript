@@ -23,7 +23,8 @@
     "res:clean": "rescript clean",
     "test": "jest",
     "testw": "jest --watch",
-    "supervisor": "supervisor ./bin/api"
+    "supervisor": "supervisor ./bin/api",
+    "start": "node ./bin/api"
   },
   "devDependencies": {
     "rescript": "^10.0.1",
