@@ -18,6 +18,8 @@ FROM node:19-alpine
 
 RUN apk --update --upgrade --no-cache add bash
 
+WORKDIR /home/app
+
 COPY --from=builder /home/app/ ./
 
 CMD ["npm", "run", "start"]
