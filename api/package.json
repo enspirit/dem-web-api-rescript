@@ -18,10 +18,9 @@
     "api"
   ],
   "scripts": {
-    "prepare": "npm run re:build",
-    "re:build": "rescript build -with-deps",
-    "re:start": "rescript build -w",
-    "re:clean": "rescript clean",
+    "res:build": "rescript build -with-deps",
+    "res:start": "rescript build -w",
+    "res:clean": "rescript clean",
     "test": "jest",
     "testw": "jest --watch",
     "supervisor": "supervisor ./bin/api"
