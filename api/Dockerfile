@@ -1,22 +1,24 @@
-FROM node:19-alpine
+FROM node:19-alpine AS builder
 
 WORKDIR /home/app
 
-RUN apk --update --upgrade --no-cache add bash cairo-dev make pango-dev gdk-pixbuf curl && \
-  ln -s /usr/bin/python3 /usr/bin/python
+RUN apk --update --upgrade --no-cache add bash cairo-dev make pango-dev \
+  gdk-pixbuf gcc g++ python3-dev musl-dev jpeg-dev zlib-dev libffi-dev curl
 
 COPY package.json ./
 
-COPY bsconfig.json ./
+RUN npm install
 
-COPY src ./src
+COPY ./ ./
 
-COPY __tests__ ./__tests__
+RUN npm run res:build
 
-RUN apk add --no-cache --virtual .build-deps gcc g++ python3-dev musl-dev jpeg-dev zlib-dev libffi-dev && \
-  npm install && \
-  apk del .build-deps
+FROM node:19-alpine
 
-COPY bin ./bin
+RUN apk --update --upgrade --no-cache add bash
 
-CMD ["./bin/api"]
+WORKDIR /home/app
+
+COPY --from=builder /home/app/ ./
+
+CMD ["npm", "run", "start"]
