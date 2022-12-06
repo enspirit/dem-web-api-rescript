@@ -1,4 +1,4 @@
-FROM node:19-alpine AS builder
+FROM node:19-alpine
 
 WORKDIR /home/app
 
@@ -10,13 +10,7 @@ COPY package.json ./
 
 RUN npm install
 
-FROM node:19-alpine
-
-RUN apk --update --upgrade --no-cache add bash
-
 COPY ./ ./
-
-COPY --from=builder /home/app/ ./
 
 RUN npm run res:build
 
