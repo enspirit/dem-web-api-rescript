@@ -5,23 +5,10 @@ let healthCheck = (req, res, next) => {
   res["end"](. None)
 }
 
-// let healthCheck = Middleware.from((_, _, res) => {
-//   let result = Js.Dict.empty()
-//   result->Js.Dict.set("Hello", "World"->Js.Json.string)
-//   let json = result->Js.Json.object_
-//   res |> Response.status(Response.StatusCode.Ok) |> Response.sendJson(json)
-// })
-
 let postCompile = (req, res, next) => {
   Js.Console.log("POST /compile/")
+  let dem_res = App.compile(None, None, None, None, None)
   res["setHeader"](. "Content-Type", "text/plain")
   res["write"](. "Ok")
   res["end"](. None)
 }
-
-// let postCompile = Middleware.from((_, _, res) => {
-//   let result = Js.Dict.empty()
-//   result->Js.Dict.set("Hello", "World"->Js.Json.string)
-//   let json = result->Js.Json.object_
-//   res |> Response.status(Response.StatusCode.Ok) |> Response.sendJson(json)
-// })

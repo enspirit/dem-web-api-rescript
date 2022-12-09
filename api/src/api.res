@@ -5,6 +5,14 @@ let app = express(. )
 
 let port = 3000
 
+type urlencoded = {
+  "extended": bool
+}
+
+app["use"](. express["json"])
+let extended = { "extended": true }
+app["use"](. express["urlencoded"](. extended))
+
 app["get"](. "/", healthCheck)
 app["post"](. "/compile/", postCompile)
 

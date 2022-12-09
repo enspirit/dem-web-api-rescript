@@ -6,6 +6,14 @@ var Express = require("express");
 
 var app = Express();
 
+app.use(Express.json);
+
+var extended = {
+  extended: true
+};
+
+app.use(Express.urlencoded(extended));
+
 app.get("/", Routes.healthCheck);
 
 app.post("/compile/", Routes.postCompile);
@@ -20,5 +28,6 @@ var port = 3000;
 
 exports.app = app;
 exports.port = port;
+exports.extended = extended;
 exports.start = start;
 /* app Not a pure module */
