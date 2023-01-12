@@ -23,7 +23,15 @@ services:
   examples:
 
     - description: |-
-        when requested, it works
+        when requested without params, it works
+      expected:
+        content_type: ~
+        status: 200
+
+    - description: |-
+        when requested with some text only, it works
+      params:
+        text : "Hello world"
       expected:
         content_type: ~
         status: 200

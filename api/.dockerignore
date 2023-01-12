@@ -1,0 +1,8 @@
+.dockerignore
+Dockerfile
+
+makefile.mk
+
+node_modules
+lib
+package-lock.json
