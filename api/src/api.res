@@ -9,7 +9,7 @@ type urlencoded = {
   "extended": bool
 }
 
-app["use"](. express["json"])
+app["use"](. express["json"](Js.Obj.empty()))
 let extended = { "extended": true }
 app["use"](. express["urlencoded"](. extended))
 

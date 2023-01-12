@@ -12,7 +12,7 @@ function healthCheck(req, res, next) {
 
 function postCompile(req, res, next) {
   console.log("POST /compile/");
-  var dem_res = App.compile(undefined, undefined, undefined, undefined, undefined);
+  App.compile(undefined, undefined, undefined, undefined, undefined);
   res.setHeader("Content-Type", "text/plain");
   res.write("Ok");
   return res.end(undefined);
