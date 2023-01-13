@@ -20,7 +20,7 @@ the core and the file system interface of the tool.
 Use the `compile` service to generate an html string from markdown, css and
 json sources in specific files.
 
-*TODO*
+*TODO: continue*
 
 ## Hacking
 
@@ -77,20 +77,6 @@ And to get the list of available commands:
 
 ```
 npm run
-```
-
-### Building the tool
-
-You can build the program with
-
-```
-npm run res:build
-```
-
-or in watch mode with
-
-```
-npm run res:start
 ```
 
  ## Publishing
