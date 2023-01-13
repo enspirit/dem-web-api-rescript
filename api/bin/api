@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-const api = require('../src/api.bs.js');
+const api = require('../lib/js/src/api.bs.js');
 api.start();
