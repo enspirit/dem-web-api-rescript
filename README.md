@@ -79,6 +79,16 @@ And to get the list of available commands:
 npm run
 ```
 
+### Next dev steps
+
+- Use a to-be-written finitio-rescript in order to make this api webservices
+more secure.
+- Complete the api using the dem functions.
+- Prepare the dem-web-api to be put on a server, with some given html/md/...
+and css and be ready to receive some data. It will return the wanted document.
+pdf or so...
+- ...
+
  ## Publishing
 
  All the releases were published using `np` so far. Cf.
